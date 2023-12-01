@@ -5,13 +5,64 @@
 }
 @using AddressBook.Data.Entities
 
-<h5>Full Name</h5>
-<p>@Model.FullName</p>
-<h5>Email</h5>
-<p>@Model.Email</p>
-<h5>Phone</h5>
-<p>@Model.Phone</p>
-<h5>Address</h5>
-<p>@Model.Address</p>
+<title>Contact Details</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 20px;
+    }
 
-<a asp-controller="Contacts" asp-action="Index">Back to List</a>
+    .contact-details {
+        max-width: 400px;
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+        .contact-details h2 {
+            color: #4CAF50;
+        }
+
+    .detail-label {
+        font-weight: bold;
+    }
+
+    .back{
+        color: #4CAF50;
+        border: 2px solid #4CAF50;
+        margin-top: 20px;
+        padding: 20px 0;
+        text-align: center;
+        width: 135px;
+        display: block;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .back:hover {
+            color: white;
+            border-color: white;
+            background-color: #4CAF50;
+            transition: all .2s;
+        }
+</style>
+
+
+    <div class="contact-details">
+        <h2>Contact Details</h2>
+        <p class="detail-label">Full Name:</p>
+    <p id="contactFullName">@Model.FullName</p>
+
+        <p class="detail-label">Email:</p>
+    <p id="contactEmail">@Model.Email</p>
+
+        <p class="detail-label">Phone:</p>
+    <p id="contactPhone">@Model.Phone</p>
+
+        <p class="detail-label">Address:</p>
+    <p id="contactAddress">@Model.Address</p>
+    </div>
+
+<a class="back"asp-controller="Contacts" asp-action="Index">Back to List</a>
